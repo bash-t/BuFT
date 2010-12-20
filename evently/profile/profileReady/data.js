@@ -1,4 +1,4 @@
 function (e) {
   //$.log($$("#account").userCtx);
-  return { "userCtx" : $$("#account").userCtx};
+  return { "name" : $$("#account").userCtx.name};
 }
