@@ -1,5 +1,5 @@
 function(data) {
-  // $.log(data)
+   $.log(data)
   var p;
   return {
     tickets : data.rows.map(function(r) {
