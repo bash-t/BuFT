@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BuFT! | Bug & Feature Tracker!</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="account"></div>
+    <h1>BuFT! | Bug & Feature Tracker!</h1>
+    <div id="profile"></div>
+    <!--><div id="addTicket"><p>Bitte einloggen, um Bugs/Features anzulegen!</p></div>-->
+    <div id="tickets"><p>Empty tickets!</p></div>
+    <div id="sidebar"><p>Empty sidebar!</p></div>
+  </body>
+  <script src="vendor/couchapp/loader.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $.couch.app(function(app) {
+      $("#account").evently("account", app);
+      //$("#addTicket").evently("addTicket", app);
+      $("#tickets").evently("tickets", app);
+      $("#profile").evently("profile", app);
+      //$.evently.connect("#account","#addTicket", ["loggedIn","loggedOut"]);
+      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+      //$("#sidebar").evently("choices", app);
+      //it just tells to evently that topping events should be routed from sidebar to items
+      //$.evently.connect("#addTicket", "#items", ["addTopping"]);
+    });
+  </script>
+
+</html>

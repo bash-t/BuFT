@@ -1,0 +1,12 @@
+<p>
+  When the event "topping" of this widget "items" is called, then the data.js is been called. This js will pass back a json object to this mustache and the variables of ths json can be used here.<br />
+  <!--Oh, you want <b>{{toppingVal}}</b> on your pizza!-->
+  The toppings on your Pizza are <br>
+  <ul>
+
+  {{#toppingsVal}}
+    <li>{{topKey}} - <a href="#delSingleTopping" id="a#{{index}}">delete this one</a></li>
+  {{/toppingsVal}}
+  </ul>
+  you can <a href="#removeAllToppings">remove all Toppings</a> if you want.
+</p>

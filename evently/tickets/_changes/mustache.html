@@ -1,0 +1,24 @@
+<p>
+  Suchkriterien: Bugs / Feature / Severity ...
+  
+</p>
+
+
+<p>
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>TicketNr</td>
+      <th>TicketTitel</td>
+      <th>Status</td>
+      <th>Severity</td>
+    </tr>
+  {{#tickets}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{subject}}</td>
+      <td>{{status}}</td>
+      <td>{{severity}}</td>
+    </tr>
+    {{/tickets}}
+  </table>
+</p>

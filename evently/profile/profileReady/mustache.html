@@ -1,0 +1,30 @@
+<p><b>Hallo {{userCtx.name}}!</b></p>
+<p>Deine Optionen:<br/>
+  <ul>
+    <li><a href="#" onclick="javascript:($('#addTicket').show())">Neues Ticket anlegen</a></li>
+  </ul>
+</p>
+
+<div id="addTicket" style="display:none">
+  <form>
+    <a href="#" onclick="javascript:($('#addTicket').hide())">[x]schliessen</a><br/>
+    <label>Ticket Typ:  <input type="radio" name="type" value="bug" />Bug | <input type="radio" name="type" value="feature" />Feature</label><br />
+    <label>Betreff: <input type="text" name="subject" size=60 value=""></label><br/>
+    <label>In/Fuer Milestone: <input type="text" name="milestone" size=60 value=""></label><br/>
+    <label>Severity: <select name="severity">
+                      <option value="1-Hoch">Hoch</option>
+                      <option value="2-Mittel">Mittel</option>
+                      <option value="3-Niedrig">Niedrig</option>
+                     </select></label><br/>
+    <label>Beschreibung: <textarea name="description" rows="5" cols="50"></textarea></label><br/>
+    <label>Status: <select name="status">
+                      <option value="1-new">new</option>
+                      <option value="2-accepted">accepted</option>
+                      <option value="3-declined">declined</option>
+                      <option value="4-ready-for-review">ready for review</option>
+                      <option value="5-closed">closed</option>
+                     </select></label><br/>
+    <input type="submit" name="submit" value="speichern" />
+  </form>
+</div>
+<div style="clear:left;"></div>
