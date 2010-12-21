@@ -45,7 +45,43 @@ h1 {
 form {
   padding:4px;
   margin:6px;
-  background-color:#ddd;  
+  /*background-color:#ddd;*/  
+}
+
+div.bug {
+  background-color:#ccff99;
+  border: 4px solid #cccc99;
+}
+
+div.feature {
+  background-color:#0099ff;
+  border: 4px solid #0066ff;
+}
+
+#addTicket {
+  width: 700px;
+}
+
+#frm_addTicket {
+  padding: 5px 0 8px 155px;
+}
+#frm_addTicket label {
+  float: left;
+  font-weight: bold;
+  margin-left: -155px;
+  width: 150px;
+}
+#frm_addTicket input[type="text"],
+#frm_addTicket textarea {
+  width:400px;
+}
+
+#frm_addTicket textarea {
+  height:200px;
+}
+
+#frm_addTicket select {
+  width:150px;
 }
 
 div.avatar {
@@ -68,6 +104,10 @@ div.avatar img {
   padding:0;
   width : 40px;
   height : 40px;
+}
+
+img {
+  border:0;
 }
 
 #items ul, #tickets li{

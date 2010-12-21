@@ -1,29 +1,49 @@
+<script language="javaScript">
+  var newFeature = function() {
+    $('#typeLabel').html("Neues Feature Request anlegen");
+    $('#addTicket').addClass("feature");
+    $('#addTicket').removeClass("bug");
+    $('#frm_addTicket #type').val('feature');
+    $('#addTicket').show();
+  }
+  
+  var newBug = function() {
+    $('#typeLabel').html("Neuen Bug melden");
+    $('#addTicket').addClass("bug");
+    $('#addTicket').removeClass("feature");
+    $('#frm_addTicket #type').val('bug');
+    $('#addTicket').show();
+  }
+  
+</script>
 <p><b>Hallo {{name}}!</b></p>
 <p>Deine Optionen:<br/>
   <ul>
-    <li><a href="#" onclick="javascript:($('#addTicket').show())">Neues Ticket anlegen</a></li>
+    <li><a href="#" onclick="newBug();">Bug melden</a></li>
+    <li><a href="#" onclick="newFeature();">Feature Request eintragen</a></li>
   </ul>
 </p>
 
 <div id="addTicket" style="display:none">
-  <form>
-    <a href="#" onclick="javascript:($('#addTicket').hide())">[x]schliessen</a><br/>
-    <label>Ticket Typ:  <input type="radio" name="type" value="bug" />Bug | <input type="radio" name="type" value="feature" />Feature</label><br />
-    <label>Betreff: <input type="text" name="subject" size=60 value=""></label><br/>
-    <label>In/Fuer Milestone: <input type="text" name="milestone" size=60 value=""></label><br/>
-    <label>Severity: <select name="severity">
+    <div style="float:right"><a href="#" onclick="javascript:($('#addTicket').hide())" title="schliessen"><img src="icons/close24.png"></a></div>
+    <form id="frm_addTicket">
+    <h1><span id="typeLabel"></span></h1><br />
+    <label>Betreff:</label> <input type="text" name="subject" size=60 value=""><br/>
+    <label>In/Fuer Milestone:</label><input type="text" name="milestone" size=60 value=""><br/>
+    <label>Severity:</label><select name="severity">
                       <option value="1-Hoch">Hoch</option>
                       <option value="2-Mittel">Mittel</option>
                       <option value="3-Niedrig">Niedrig</option>
-                     </select></label><br/>
-    <label>Beschreibung: <textarea name="description" rows="5" cols="50"></textarea></label><br/>
-    <label>Status: <select name="status">
+                     </select><br/>
+    <label>Beschreibung:</label><textarea name="description"></textarea><br/>
+    <label>Status:</label><select name="status">
                       <option value="1-new">new</option>
                       <option value="2-accepted">accepted</option>
                       <option value="3-declined">declined</option>
                       <option value="4-ready-for-review">ready for review</option>
                       <option value="5-closed">closed</option>
-                     </select></label><br/>
+                     </select><br/>
+    <input type="hidden" name="type" id="type" value="test" />
     <input type="submit" name="submit" value="speichern" />
   </form>
 </div>
