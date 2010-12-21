@@ -1,18 +1,26 @@
 <script language="javaScript">
   var newFeature = function() {
-    $('#typeLabel').html("Neues Feature Request anlegen");
-    $('#addTicket').addClass("feature");
-    $('#addTicket').removeClass("bug");
-    $('#frm_addTicket #type').val('feature');
-    $('#addTicket').show();
+    cb = function() {
+      $('#frm_addTicket')[0].reset();
+      $('#typeLabel').html("Neues Feature Request anlegen");
+      $('#addTicket').addClass("feature");
+      $('#addTicket').removeClass("bug");
+      $('#frm_addTicket #type').val('feature');
+    }
+    $('#addTicket').hide("slow", cb);
+    $('#addTicket').show("slow");
   }
   
   var newBug = function() {
-    $('#typeLabel').html("Neuen Bug melden");
-    $('#addTicket').addClass("bug");
-    $('#addTicket').removeClass("feature");
-    $('#frm_addTicket #type').val('bug');
-    $('#addTicket').show();
+    cb = function() {
+      $('#frm_addTicket')[0].reset();
+      $('#typeLabel').html("Neuen Bug melden");
+      $('#addTicket').addClass("bug");
+      $('#addTicket').removeClass("feature");
+      $('#frm_addTicket #type').val('bug');
+    }
+    $('#addTicket').hide("slow", cb);
+    $('#addTicket').show("slow");
   }
   
 </script>
@@ -25,7 +33,7 @@
 </p>
 
 <div id="addTicket" style="display:none">
-    <div style="float:right"><a href="#" onclick="javascript:($('#addTicket').hide())" title="schliessen"><img src="icons/close24.png"></a></div>
+    <div style="float:right"><a href="#" onclick="javascript:($('#addTicket').hide('slow'))" title="schliessen"><img src="icons/close24.png"></a></div>
     <form id="frm_addTicket">
     <h1><span id="typeLabel"></span></h1><br />
     <label>Betreff:</label> <input type="text" name="subject" size=60 value=""><br/>

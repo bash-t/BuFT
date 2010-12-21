@@ -6,7 +6,7 @@ function() {
   $$(this).app.db.saveDoc(fdoc, {
     success : function() {
       form[0].reset();
-      $('#addTicket').hide();
+      $('#addTicket').hide("slow");
     }
   });
   return false;
